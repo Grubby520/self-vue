@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>vue</title>
+</head>
+
+<body>
+	<h1 id="name">{{name}}</h1>
+</body>
+<script src="./observer/index.js"></script>
+<script>
+	const el = document.getElementById('name');
+	const vue$ = new Vue({
+		name: 'Hello Vue'
+	}, el, 'name');
+
+	console.log(vue$);
+
+	window.setTimeout(() => {
+		vue$.data.name = 'Hello SelfVue';
+		console.log('name changed');
+	})
+</script>
+
+</html>

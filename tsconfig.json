@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "outDir": "./built",
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "sourceMap": true,
+    "module": "commonjs",
+    "allowJs": true,
+  },
+  "include": [
+    "src_bak/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

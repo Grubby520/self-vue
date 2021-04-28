@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function toObj(str) {
+			return str.split('，').map((item, index) => {
+				const arr = item.split('：');
+				return {
+					label: arr[1],
+					value: arr[0],
+					enumValue: index
+				}
+			})
+		}
+		var str = 'INIT_INVENTORY：初始化库存，IN_INVENTORY：采购入库，DELIVERY：销售出库，PACKAGE_GENERATE：包裹生成，PACKAGE_RECOVERY：待还库包裹回收，SHIFT_IN：库存转入，SHIFT_OUT：库存转出，RETURN_INVENTORY：包裹还库，PACKAGE_REFUND：退件入库，INVENTORY_PROFIT：盘盈入库，INVENTORY_SHORTAGES：盘亏出库，WAIT_RETURNED：待还库，PICKING_FAILED：拣货失败，VIRTUAL_ORDER_RESET：订单重置，VIRTUAL_ORDER_SHELVE：订单搁置，CANCEL_DELIVER：仓库取消发货，GIFT_IN_INVENTORY：赠品入库，DISTRIBUTE_SUCCESS：配货成功，INVALID_PACKAGE_RECYCLE：无效包裹回收，TRANSFER_INVENTORY：库位转移，LOCK：锁定，UNLOCK：解锁，APPLY_RETURN_INVENTORY_SUCCESS：申请还库成功，RETURN_INVENTORY_SUCCESS：还库成功';
+		var str = 'AVAILABLE_QUANTITY：可用数量，LOCATION_CODE：货架位，RESERVED_QUANTITY：预留数量，WAIT_RETURN_QUANTITY：待还库数量，LOCK_STATUS：锁定状态'
+		var str = '操作PDA_PURCHASE_IN_INVENTORY：PDA采购入库，VERIFY_DELIVERY_IN_INVENTORY：核重发货出库，PDA_MAKE_LOSS：PDA盘亏，PDA_MAKE_WIN：PDA盘盈，SINGLE_OR_BATCH_MAKE_LOSS：单品/批量盘亏，SINGLE_OR_BATCH_MAKE_WIN：单品/批量盘盈，DISTRIBUTION：配货，VERIFY_DELIVERY_INVALID_PACKAGE：核重发货、无效包裹，PDA_TRANSFER_INVENTORY：PDA库位转移，LOCK：锁定，UNLOCK：解锁，REFUND_IN_INVENTORY_APPLY_RETURN_INVENTORY：退件入库-申请还库，PDA_WAIT_RETURNED：PDA待还库，PDA_RETURNED：仓库取消发货，VIRTUAL_ORDER_RESET：重置订单，VIRTUAL_ORDER_SHELVE：搁置订单，PICKING_FAILURE：拣货失败'
+		console.log(JSON.stringify(toObj(str), null, '\t'));
+	</script>
+</body>
+
+</html>

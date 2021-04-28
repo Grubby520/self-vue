@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		function greet(lang1, lang2, lang3) {
+			console.log(`Hello, my name is ${this.name} and I know ${lang1}, ${lang2}, and ${lang3}`)
+		}
+
+		const user = {
+			name: 'Tyler',
+			age: 27,
+		}
+
+		const languages = ['JavaScript', 'Ruby', 'Python']
+
+		greet.call(user, languages[0], languages[1], languages[2]);
+
+		Object.prototype.myCall = function () {
+			console.log(arguments);
+		}
+
+
+		greet.myCall(user, languages[0], languages[1], languages[2]);
+
+	</script>
+</body>
+
+</html>
