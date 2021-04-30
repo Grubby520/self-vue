@@ -9,3 +9,7 @@ export function remove(arr: Array<any>, item: any): Array<any> | void {
     }
   }
 }
+
+export function isObject(obj: any) {
+  return obj !== null && typeof obj === 'object'
+}

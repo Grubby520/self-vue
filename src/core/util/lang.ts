@@ -19,3 +19,24 @@ export function parsePath(path: string): any {
     return obj;
   };
 }
+
+/**
+ * Check if a string starts with $ or _
+ * methods的名称不要以 $ or _ 开头
+ */
+export function isReserved(str: string): boolean {
+  const c = (str + "").charCodeAt(0);
+  return c === 0x24 || c === 0x5f;
+}
+
+/**
+ * Define a property
+ */
+export function def(obj: Object, key: string, value: any, enumerable?: boolean) {
+  Object.defineProperty(obj, key, {
+    configurable: true,
+    enumerable: !!enumerable,
+    writable: true,
+    value: value
+  })
+}
