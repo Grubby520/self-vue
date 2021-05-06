@@ -1,24 +1,13 @@
 const path = require('path');
-// const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
-    app: './src/index.ts'
+    app: './src/core/index'
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: 'Production',
-      template: 'index.html'
-    }),
-  ],
-  // optimization: {
-  //   splitChunks: {
-
-  //   }
-  // },
+  devtool: 'inline-source-map',
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -55,4 +44,11 @@ module.exports = {
       },
     ]
   },
-};
+  plugins: [
+    new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   title: 'Production',
+    //   template: 'index.html'
+    // }),
+  ]
+}

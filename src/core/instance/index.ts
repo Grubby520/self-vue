@@ -5,3 +5,5 @@ function Vue(options: any) {
 }
 
 initMixin(Vue)
+
+export default Vue
