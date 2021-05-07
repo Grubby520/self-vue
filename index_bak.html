@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script src="./dist/app.bundle.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          msg: 'vue init',
+          arr: [
+            {
+              label:'lin',
+              value: 1
+            },
+            {
+              label:'wang',
+              value: 2
+            }
+          ],
+          obj: {
+            id: 0,
+            tmp: 'obj init'
+          }
+        }
+      }
+    })
+
+    console.log(app)
+  </script>
+</body>
+</html>

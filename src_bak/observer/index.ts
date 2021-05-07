@@ -3,7 +3,7 @@ const Dep_: any = Dep;
 /**
  * 订阅者
  */
-class Wathcer {
+class Watcher {
 	vm: any;
 	exp: string;
 	cb: Function;
@@ -82,7 +82,7 @@ export function Vue(data, el, exp) {
 	this.data = data;
 	observe(data);
 	el.innerHTML = this.data[exp]; // init template value
-	new Wathcer(this, exp, value => {
+	new Watcher(this, exp, value => {
 		el.innerHTML = value;
 	});
 }

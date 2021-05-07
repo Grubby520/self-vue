@@ -1,3 +1,5 @@
+import { popTarget, pushTarget } from "../observer/dep";
+
 // 初始化生命周期，在实例上添加了一系列的默认属性
 export function initLifecycle(vm: any) {
     const options = vm.$options
@@ -17,4 +19,18 @@ export function initLifecycle(vm: any) {
     vm._isMounted = false
     vm._isDestroyed = false
     vm._isBeingDestroyed = false
+}
+
+/**
+ * 
+ */
+export function mountComponent(vm: any, el: Element, hydrating: boolean) {
+    vm.$el = el
+    callHook(vm, 'beforeMount')
+}
+
+export function callHook(vm: any, hook: string) {
+    pushTarget()
+    // ...
+    popTarget()
 }

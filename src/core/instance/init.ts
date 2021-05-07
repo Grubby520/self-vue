@@ -14,9 +14,9 @@ export function initMixin(Vue: any) {
         // 合并全局配置
         vm.$options = options || {}
 
-        vm._renderProxy = vm
+        vm._renderProxy = vm // 这tm不是无限循环?
 
-        vm._self = vm // 这tm不会无限循环?
+        vm._self = vm // 这tm不是无限循环?
 
         // 初始化组件实例的关系属性，如 $options, $parent, $root, $children, $refs
         initLifecycle(vm)

@@ -41,6 +41,8 @@ function initData(vm: any) {
             proxy(vm, '_data', key)
         }
     }
+    // observe data 为data对象上的数据设置响应式
+    observe(data, true /* asRootData */);
 }
 
 export function getData(data: Function, vm: any) {

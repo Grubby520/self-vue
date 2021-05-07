@@ -67,7 +67,7 @@ Object.keys(data).forEach(key => {
 			return data[key];
 		},
 		set(newVal) {
-			rdata[key] = newVal;
+			data[key] = newVal;
 		}
 	})
 });
